@@ -1,0 +1,40 @@
+/* 
+  Localizable.strings
+  MovieApp
+
+  Created by Nezih on 18.10.2022.
+  
+*/
+"movies.title" = "Trending Movies";
+
+
+/// States
+
+// Error
+"movie.list.error.title" = "Error";
+"movie.list.error.description" = "Error accured while getting the data.";
+// Empty
+"movie.list.empty.title" = "Empty List";
+"movie.list.empty.description" = "The list is empty.";
+// Refresh
+"pull.to.refresh.title" = "Pull to refresh";
+
+
+// Loading HUD
+"loading.hud.title" = "Loading";
+"loading.hud.subtitle" = "Please wait.";
+
+// Movie Not Released
+"movie.voteAverage.empty" = "Not Released";
+
+// Fatal Errors
+"fatal_error.MovieListStateView" = "init(coder:) has not been implemented. MovieListStateView";
+
+// Language
+
+"language.en" = "English";
+"language.es" = "Spanish";
+"language.zh" = "Chinese";
+"language.kr" = "Korean";
+"language.de" = "German";
+"language.else" = "Unknown";
