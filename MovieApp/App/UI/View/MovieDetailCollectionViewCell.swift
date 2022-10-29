@@ -120,6 +120,18 @@ class MovieDetailCollectionViewCell : UICollectionViewCell {
             languageLabel.text = Constants.MovieDetail.Popup.languageLabel + "language.es".localized()
         case "zh":
             languageLabel.text = Constants.MovieDetail.Popup.languageLabel + "language.zh".localized()
+        case "de":
+            languageLabel.text = Constants.MovieDetail.Popup.languageLabel + "language.de".localized()
+        case "kr":
+            languageLabel.text = Constants.MovieDetail.Popup.languageLabel + "language.kr".localized()
+        case "pl":
+            languageLabel.text = Constants.MovieDetail.Popup.languageLabel + "language.pl".localized()
+        case "pt":
+            languageLabel.text = Constants.MovieDetail.Popup.languageLabel + "language.pt".localized()
+        case "tr":
+            languageLabel.text = Constants.MovieDetail.Popup.languageLabel + "language.tr".localized()
+        case "it":
+            languageLabel.text = Constants.MovieDetail.Popup.languageLabel + "language.it".localized()
         default:
             languageLabel.text = Constants.MovieDetail.Popup.languageLabel + "language.else".localized()
         }

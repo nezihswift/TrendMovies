@@ -72,6 +72,7 @@ class MovieListCollectionViewController: UIViewController {
         let collectionViewLayout = UICollectionViewFlowLayout()
         collectionViewLayout.itemSize = CGSize(width: view.frame.size.width, height: Constants.MovieCollection.cellHeight)
         collectionViewLayout.sectionHeadersPinToVisibleBounds = true
+        collectionViewLayout.headerReferenceSize = CGSize(width: view.frame.size.width, height: Constants.MovieCollection.sectionHeaderHeight)
         collectionViewLayout.scrollDirection = .vertical
         collectionView = UICollectionView(frame: view.frame, collectionViewLayout: collectionViewLayout)
         
@@ -86,6 +87,7 @@ class MovieListCollectionViewController: UIViewController {
         collectionView.backgroundColor = UIColor.theme.background
         collectionView.alwaysBounceVertical = true
         collectionView.register(MovieCollectionViewCell.self, forCellWithReuseIdentifier: Constants.MovieCollection.cellIdentifier)
+        collectionView.register(MovieSectionHeaderView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: Constants.MovieCollection.headerIdentifier)
         collectionView.dataSource = self
         collectionView.delegate = self
     }
@@ -149,7 +151,37 @@ extension MovieListCollectionViewController : UICollectionViewDataSource {
     }
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 1
+        return moviesViewModel.movieSectionList?.count ?? 1
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        if kind == UICollectionView.elementKindSectionHeader,
+           let sectionHeader = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: Constants.MovieCollection.headerIdentifier, for: indexPath) as? MovieSectionHeaderView {
+            switch moviesViewModel.movieSectionList?[indexPath.section].language {
+            case "en":
+                sectionHeader.headerLabel.text = "language.en".localized()
+            case "es":
+                sectionHeader.headerLabel.text = "language.es".localized()
+            case "zh":
+                sectionHeader.headerLabel.text = "language.zh".localized()
+            case "de":
+                sectionHeader.headerLabel.text = "language.de".localized()
+            case "kr":
+                sectionHeader.headerLabel.text = "language.kr".localized()
+            case "pl":
+                sectionHeader.headerLabel.text = "language.pl".localized()
+            case "pt":
+                sectionHeader.headerLabel.text = "language.pt".localized()
+            case "tr":
+                sectionHeader.headerLabel.text = "language.tr".localized()
+            case "it":
+                sectionHeader.headerLabel.text = "language.it".localized()
+            default:
+                sectionHeader.headerLabel.text = "language.else".localized()
+            }
+            return sectionHeader
+        }
+        return UICollectionReusableView()
     }
 }
 

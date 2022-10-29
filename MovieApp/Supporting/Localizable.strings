@@ -37,4 +37,8 @@
 "language.zh" = "Chinese";
 "language.kr" = "Korean";
 "language.de" = "German";
+"language.pl" = "Polish";
+"language.pt" = "Portugues";
+"language.tr" = "Turkish";
+"language.it" = "Italian";
 "language.else" = "Unknown";

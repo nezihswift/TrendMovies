@@ -23,7 +23,9 @@ class Constants {
     
     struct MovieCollection {
         static let cellIdentifier : String = "movieCell"
+        static let headerIdentifier : String = "movieHeaderCell"
         static let cellHeight : CGFloat = 200
+        static let sectionHeaderHeight : CGFloat = 40
         static let undefinedText : String = "Undefined"
         static let navigationBarBorderWidth : CGFloat = 0.5
     }
