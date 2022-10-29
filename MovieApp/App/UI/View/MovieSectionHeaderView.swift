@@ -28,8 +28,7 @@ class MovieSectionHeaderView : UICollectionReusableView {
     private func setupViews() {
         addSubview(headerLabel)
         headerLabel.autoPinEdgesToSuperviewEdges()
-        backgroundColor = UIColor.theme.detailTitleBackground
-        
+        backgroundColor = UIColor.theme.background
         headerLabel.textColor = UIColor.theme.titleText
     }
 }
